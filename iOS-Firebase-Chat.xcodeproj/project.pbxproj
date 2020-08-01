@@ -14,6 +14,7 @@
 		7C199FA324D4670200C84408 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C199FA224D4670200C84408 /* Assets.xcassets */; };
 		7C199FA624D4670200C84408 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C199FA424D4670200C84408 /* LaunchScreen.storyboard */; };
 		7C199FB424D46D9800C84408 /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C199FB324D46D9800C84408 /* ConversationsController.swift */; };
+		7C199FB624D5D76F00C84408 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C199FB524D5D76F00C84408 /* LoginController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		7C199FA524D4670200C84408 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C199FA724D4670200C84408 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C199FB324D46D9800C84408 /* ConversationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
+		7C199FB524D5D76F00C84408 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				7C199FB324D46D9800C84408 /* ConversationsController.swift */,
+				7C199FB524D5D76F00C84408 /* LoginController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				7C199F9A24D466FE00C84408 /* AppDelegate.swift in Sources */,
 				7C199FB424D46D9800C84408 /* ConversationsController.swift in Sources */,
 				7C199F9C24D466FE00C84408 /* SceneDelegate.swift in Sources */,
+				7C199FB624D5D76F00C84408 /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
