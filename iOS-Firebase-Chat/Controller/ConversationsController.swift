@@ -11,11 +11,13 @@ import UIKit
 class ConversationsController: UIViewController {
     
     // MARK: - Properties
+    private let tableView = UITableView()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        configureTableView()
     }
     
     // MARK: - Selectors
@@ -47,5 +49,41 @@ class ConversationsController: UIViewController {
         
         let image = UIImage(systemName: "person.circle.fill")
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: UIBarButtonItem.Style.plain, target: self, action: #selector(showProfile))
+    }
+    
+    func configureTableView() {
+        tableView.backgroundColor = .white
+        view.addSubview(tableView)
+        tableView.frame = view.frame
+        
+        tableView.tableFooterView = UIView()
+        
+        tableView.rowHeight = 80
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ConversationCell")
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
+}
+
+extension ConversationsController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ConversationCell", for: indexPath)
+        cell.textLabel?.text = "Some text"
+        return cell
+        
+    }
+    
+    
+}
+
+extension ConversationsController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
     }
 }
