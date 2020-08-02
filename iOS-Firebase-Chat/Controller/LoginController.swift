@@ -19,63 +19,17 @@ class LoginController: UIViewController {
         return imageView
     }()
     
-    private lazy var emailContrainerView : UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 10
-        
-        let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "envelope")
-        imageView.tintColor = .systemIndigo
-        
-        view.addSubview(imageView)
-        imageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 8).isActive = true
-        imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        imageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
-        imageView.widthAnchor.constraint(equalToConstant: 28).isActive = true
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        
-        view.addSubview(emailTextField)
-        emailTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        emailTextField.leftAnchor.constraint(equalTo: imageView.rightAnchor, constant: 8).isActive = true
-        emailTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 4).isActive = true
-        emailTextField.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -4).isActive = true
-        emailTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -4).isActive = true
-        emailTextField.translatesAutoresizingMaskIntoConstraints = false
-        
-        view.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        return view
+    private lazy var emailView: InputView = {
+        return InputView(image: UIImage(systemName: "envelope")!, textField: emailTextField)
     }()
     
-    private lazy var passwordContrainerView : UIView = {
-        let view = UIView()
-        
-        let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "lock")
-        imageView.tintColor = .systemIndigo
-        
-        view.addSubview(imageView)
-        imageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 8).isActive = true
-        imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        imageView.heightAnchor.constraint(equalToConstant: 28).isActive = true
-        imageView.widthAnchor.constraint(equalToConstant: 28).isActive = true
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        
-        view.addSubview(passwordTextField)
-        passwordTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        passwordTextField.leftAnchor.constraint(equalTo: imageView.rightAnchor, constant: 8).isActive = true
-        passwordTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 4).isActive = true
-        passwordTextField.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -4).isActive = true
-        passwordTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -4).isActive = true
-        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
-        
-        view.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        return view
+    private lazy var passwordView: InputView = {
+        return InputView(image: UIImage(systemName: "lock")!, textField: passwordTextField)
     }()
     
     private let emailTextField: UITextField = {
         let tf = UITextField()
-        tf.placeholder = "Email"
-        tf.tintColor = .white
+        tf.placeholder = "E-mail"
         tf.textColor = .white
         return tf
     }()
@@ -125,7 +79,7 @@ class LoginController: UIViewController {
         
         
         
-        let stack = UIStackView(arrangedSubviews: [emailContrainerView, passwordContrainerView, button])
+        let stack = UIStackView(arrangedSubviews: [emailView, passwordView, button])
         stack.axis = .vertical
         stack.spacing = 20
         
