@@ -16,6 +16,7 @@
 		7C199FB424D46D9800C84408 /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C199FB324D46D9800C84408 /* ConversationsController.swift */; };
 		7C199FB624D5D76F00C84408 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C199FB524D5D76F00C84408 /* LoginController.swift */; };
 		7CB6C1FA24D6D2C400291C35 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB6C1F924D6D2C400291C35 /* InputView.swift */; };
+		7CB6C1FC24D6EEEC00291C35 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB6C1FB24D6EEEC00291C35 /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		7C199FB324D46D9800C84408 /* ConversationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
 		7C199FB524D5D76F00C84408 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		7CB6C1F924D6D2C400291C35 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		7CB6C1FB24D6EEEC00291C35 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				7CB6C1F924D6D2C400291C35 /* InputView.swift */,
+				7CB6C1FB24D6EEEC00291C35 /* CustomTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CB6C1FC24D6EEEC00291C35 /* CustomTextField.swift in Sources */,
 				7C199F9E24D466FE00C84408 /* ViewController.swift in Sources */,
 				7C199F9A24D466FE00C84408 /* AppDelegate.swift in Sources */,
 				7C199FB424D46D9800C84408 /* ConversationsController.swift in Sources */,

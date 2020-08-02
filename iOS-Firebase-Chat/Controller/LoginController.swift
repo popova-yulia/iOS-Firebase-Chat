@@ -28,17 +28,13 @@ class LoginController: UIViewController {
     }()
     
     private let emailTextField: UITextField = {
-        let tf = UITextField()
-        tf.placeholder = "E-mail"
-        tf.textColor = .white
+        let tf = CustomTextField(placeholder: "E-mail")
         return tf
     }()
     
     private let passwordTextField: UITextField = {
-        let tf = UITextField()
+        let tf = CustomTextField(placeholder: "Password")
         tf.isSecureTextEntry = true
-        tf.placeholder = "Password"
-        tf.textColor = .white
         return tf
     }()
     
