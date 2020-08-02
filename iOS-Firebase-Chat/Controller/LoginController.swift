@@ -44,7 +44,26 @@ class LoginController: UIViewController {
         button.layer.cornerRadius = 10
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        button.backgroundColor = .white
+        button.backgroundColor = UIColor.init(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.2)
+        button.setTitleColor( #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: UIControl.State.normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        return button
+    }()
+    
+    private let dontHaveAccountButton: UIButton = {
+        let button = UIButton(type: .system)
+        let attributedTitle = NSMutableAttributedString(string: "Don't have an account?", attributes: [
+            .font: UIFont.systemFont(ofSize: 16),
+            .foregroundColor: UIColor.white
+        ])
+        attributedTitle.append(NSAttributedString(
+            string: " Sign up",
+            attributes: [
+                .font: UIFont.boldSystemFont(ofSize: 16),
+                .foregroundColor: UIColor.white
+        ]))
+        button.setAttributedTitle(attributedTitle, for: .normal)
+        
         return button
     }()
     
@@ -85,5 +104,20 @@ class LoginController: UIViewController {
         stack.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         stack.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 32).isActive = true
         stack.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -32).isActive = true
+        
+        view.addSubview(dontHaveAccountButton)
+        
+        dontHaveAccountButton.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        dontHaveAccountButton.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        dontHaveAccountButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        dontHaveAccountButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        dontHaveAccountButton.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
+    }
+    
+    // MARK: - Selectors
+    
+    @objc func handleShowSignUp() {
+        navigationController?.pushViewController(RegistrationController(), animated: true)
     }
 }
